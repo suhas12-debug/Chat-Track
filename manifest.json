@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "ChatTrack – Save, Search & Export ChatGPT & Gemini History",
+  "version": "1.1.5",
+  "description": "Save, search & bookmark ChatGPT and Gemini history locally. Instant sidebar, PDF export. 100% private",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "activeTab",
+    "downloads",
+    "offscreen",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": [
+        "lib/html2pdf.bundle.min.js",
+        "storage.js",
+        "export.js",
+        "sidebar.js",
+        "content.js"
+      ],
+      "css": [
+        "sidebar.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-sidebar": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Toggle Chat History Sidebar"
+    }
+  }
+}

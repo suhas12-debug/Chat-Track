@@ -1,0 +1,13 @@
+/* 
+   sidebar.css - Only handles the host element positioning 
+   to avoid conflicts with the site's layout.
+*/
+#ai-history-sidebar-host {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2147483647;
+    /* Maximum z-index */
+    pointer-events: none;
+    /* Let events pass to shadow children */
+}

@@ -1,0 +1,31 @@
+# Windows / macOS system files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Python caches (from icon resizing scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# Build and local dev
+node_modules/
+dist/
+build/
+*.log
+
+# GSD/Agent folders (if any local tool artifacts exist in this path)
+.planning/
+.gemini/

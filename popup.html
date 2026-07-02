@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTrack</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body class="dark-theme">
+    <header>
+        <h1>ChatTrack</h1>
+        <div class="header-actions">
+            <!-- Performance mode removed due to ChatGPT conflicts -->
+            <button id="clearAllBtn" class="btn-danger" title="Clear all history">Clear All</button>
+        </div>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search prompts..." />
+        </div>
+
+        <div class="filter-row">
+            <select id="sortOrder">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+        </div>
+
+        <div class="toggle-row">
+            <label class="checkbox-container">
+                <input type="checkbox" id="bookmarkFilter">
+                <span class="checkmark"></span>
+                Show Bookmarked Only
+            </label>
+            <button id="clearFiltersBtn" class="btn-link">Clear Filters</button>
+        </div>
+    </div>
+
+    <div class="composer-section">
+        <div class="composer-header">
+            <span>Custom PDF</span>
+            <button id="exportPdf" title="Export current text to PDF" class="btn-icon">PDF</button>
+        </div>
+        <div id="composerInput" contenteditable="true" placeholder="Paste or type content here to export as PDF...">
+        </div>
+    </div>
+
+    <main id="promptListContainer">
+        <div id="promptList">
+            <!-- Prompts will be rendered here -->
+            <div class="loading-state">Loading prompts...</div>
+        </div>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to clear all prompts? This cannot be undone.</p>
+            <div class="modal-buttons">
+                <button id="confirmClear" class="btn-danger">Yes, Clear All</button>
+                <button id="cancelClear" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/html2pdf.bundle.min.js"></script>
+    <script src="storage.js"></script>
+    <script src="export.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

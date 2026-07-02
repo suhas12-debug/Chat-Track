@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTrack - Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7; color: #333; background: #fafafa;
+            padding: 40px 20px;
+        }
+        .container { max-width: 720px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; color: #111; }
+        .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 30px; }
+        h2 { font-size: 1.2rem; margin: 28px 0 10px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+        p, li { font-size: 0.95rem; margin-bottom: 10px; }
+        ul { padding-left: 24px; margin-bottom: 16px; }
+        .highlight { background: #f0f7ff; border-left: 3px solid #4a9eff; padding: 12px 16px; border-radius: 4px; margin: 16px 0; font-size: 0.9rem; }
+        a { color: #4a9eff; }
+        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.8rem; color: #999; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChatTrack — Privacy Policy</h1>
+        <p class="subtitle">Last updated: March 7, 2026</p>
+
+        <h2>Overview</h2>
+        <p>ChatTrack is a Chrome extension that helps users save, search, and export their AI chat conversation history from ChatGPT and Gemini. We are committed to protecting your privacy. This policy explains what data ChatTrack accesses, how it is used, and how it is stored.</p>
+
+        <div class="highlight">
+            <strong>Key Point:</strong> ChatTrack does NOT collect, transmit, or share any user data with external servers. All data is stored locally on your device using Chrome's built-in storage API.
+        </div>
+
+        <h2>Data We Access</h2>
+        <p>ChatTrack accesses the following data only from ChatGPT (chatgpt.com, chat.openai.com) and Gemini (gemini.google.com):</p>
+        <ul>
+            <li><strong>User prompts:</strong> The text you type into AI chat platforms.</li>
+            <li><strong>AI responses:</strong> The formatted HTML responses from the AI, including text, code blocks, tables, and image references.</li>
+            <li><strong>Page URL:</strong> The URL of the current chat session, used solely to associate prompts with the correct conversation.</li>
+        </ul>
+
+        <h2>How Data Is Stored</h2>
+        <ul>
+            <li>All data is stored <strong>locally on your device</strong> using <code>chrome.storage.local</code>.</li>
+            <li>No data is ever sent to any external server, analytics service, or third-party.</li>
+            <li>Data persists across browser sessions until you manually clear it using the "Clear History" button.</li>
+            <li>The extension auto-prunes history to a maximum of 5,000 entries, removing the oldest non-bookmarked items first.</li>
+        </ul>
+
+        <h2>How Data Is Used</h2>
+        <p>Captured data is used exclusively for the following purposes:</p>
+        <ul>
+            <li><strong>History display:</strong> Showing your prompt history in the sidebar and popup for search, filtering, and navigation.</li>
+            <li><strong>PDF export:</strong> Generating formatted PDF documents of your conversations when you click the Export button.</li>
+            <li><strong>Bookmarking:</strong> Allowing you to bookmark important prompts for quick access.</li>
+        </ul>
+
+        <h2>Image Proxy</h2>
+        <p>When exporting conversations that contain images (e.g., DALL-E generated images), the extension's background service worker fetches these images directly from the AI platform's CDN servers and converts them to embedded base64 format for inclusion in the PDF. This fetch occurs directly between your browser and the image CDN — no intermediary server is involved. Images are validated to be HTTPS-only, image content-type, and capped at 10MB.</p>
+
+        <h2>Permissions Explained</h2>
+        <ul>
+            <li><strong>storage / unlimitedStorage:</strong> To save prompt history locally on your device.</li>
+            <li><strong>activeTab:</strong> To identify the current chat session for filtering prompt history.</li>
+            <li><strong>scripting:</strong> To inject content scripts on ChatGPT and Gemini pages for prompt capture.</li>
+            <li><strong>downloads:</strong> To save generated PDF files to your device.</li>
+            <li><strong>offscreen:</strong> To render PDFs in an isolated environment, bypassing host page restrictions.</li>
+            <li><strong>alarms:</strong> To keep the service worker alive during multi-step PDF export operations.</li>
+            <li><strong>host_permissions (https):</strong> To fetch AI-generated images from platform CDN domains for PDF embedding.</li>
+        </ul>
+
+        <h2>Data We Do NOT Collect</h2>
+        <ul>
+            <li>No personally identifiable information (name, email, address)</li>
+            <li>No browsing history or activity outside of ChatGPT and Gemini</li>
+            <li>No analytics, telemetry, or usage tracking</li>
+            <li>No cookies or authentication credentials</li>
+            <li>No financial, health, or location data</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+        <p>ChatTrack does not use any third-party services, APIs, analytics tools, or external servers. The extension operates entirely within your browser.</p>
+
+        <h2>Data Deletion</h2>
+        <p>You can delete all stored data at any time by clicking the "Clear History" button in the extension popup or sidebar. Uninstalling the extension also removes all stored data.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:suhasbagewadi@gmail.com">suhasbagewadi@gmail.com</a></p>
+
+        <div class="footer">
+            &copy; 2026 ChatTrack. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
